@@ -1,0 +1,63 @@
+
+.product-card {
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    margin: 20px; 
+    font-family: 'Nunito Sans', sans-serif; 
+    padding-bottom: 10px; 
+    width: 17%; 
+    height: 30%; 
+}
+
+.product-card:hover{
+    box-shadow: 1px 1px 10px black;
+} 
+
+.product-card img {
+    height: 290px;
+    width: 100%;    
+    border-radius: 3px;  
+}
+
+.hidden-btns{
+    opacity: 0;
+} 
+
+.product-card:hover .hidden-btns{
+    opacity: 1;
+    /* transition: 0.5s; */
+}
+
+.product-card:hover .hidden-btns button{
+    background-color: black;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: 0.5s;
+}
+
+.product-name{
+    font-size: 18px; 
+}
+
+.show-count .count{
+    background-color: black;
+    color: white;
+}
+
+.show-count button{
+    font-size: 20px;
+    background-color: transparent;
+    padding-left: 10px; 
+    padding-right: 10px;
+    margin: 5px; 
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.show-count button:hover{
+    background-color: black;
+    color: white; 
+    transition: 0.3s; 
+}

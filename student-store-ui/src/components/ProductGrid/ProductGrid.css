@@ -1,0 +1,14 @@
+/* .grid-content{
+    display: inline-block;
+} */
+
+.product-grid{
+    margin-left: 5%; 
+    margin-right: 5%;
+
+}
+
+.best-sellers{
+    font-family: "Avenir", sans-serif;
+    font-size: 30px;  
+}
