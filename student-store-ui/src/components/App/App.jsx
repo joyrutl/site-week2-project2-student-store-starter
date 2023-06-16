@@ -36,7 +36,7 @@ export default function App() {
             <Route path="/" element={<Home productCard={productCard} />}/>
             <Route path = "/products/:productId" element={<ProductDetail/>}/>
             <Route path= "*" />
-            <Route path= "/about" />
+            <Route path= "/about"/>
             <Route path= "/contact" />
             <Route path= "/buy-now" />
           </Routes>

@@ -64,7 +64,31 @@ export default function Home({ productCard }) { // deconstructing prop
         </table>
         </div>
       <ProductGrid productCard={filteredData}/>
+      <div id="about">
+      
+      {/* About section */}
 
+      <div className='about-contact' id="About">
+      <div className="about-section">
+        <h1 className="about">About</h1>
+        <p> The codepath student store offers great products at great prices from a great team and for a great cause.
+          We've searched far and wide for items that perk the interests of even the most eccentric students and decided to offer them all here in one place.
+          All proceeds go towards bringing high-quality CS education to college students around the country.</p>
+      </div>
+
+      {/* Contact section */}
+      <div className="contact-section">
+        <h1 className="contact">Contact Us</h1>
+        <p> Email:
+            code@path.org
+            Phone:
+            1-800-CODEPATH
+            Address:
+            123 Fake Street, San Francisco, CA</p>
+      </div>
+      
+      </div>
+      </div>
 
     </div>
   )

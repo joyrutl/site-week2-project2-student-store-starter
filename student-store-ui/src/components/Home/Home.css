@@ -81,5 +81,18 @@ i{
   cursor: pointer;
   /* transition: 0.7s; */
   border-bottom: solid black;
+}
 
+.about-contact{
+  margin-left: 9%; 
+  margin-right: 9%;
+  margin-bottom: 2%;
+}
+
+.about-section p{ 
+  font-size: 20px;
+}
+
+.contact-section p{
+  font-size: 20px;
 }
