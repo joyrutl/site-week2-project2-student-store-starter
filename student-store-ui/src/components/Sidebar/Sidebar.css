@@ -1,0 +1,51 @@
+
+.sidebar{
+    display: flex;
+    flex-direction: column;  
+    height: 100vh;  
+    position: fixed;
+    z-index: 100; 
+    top: 0px; 
+    /* transition: all 2s;  */
+
+}
+
+
+
+.logo{
+    width: 92px;
+    margin-top: 2%; 
+    margin-bottom:2%;
+    margin-left: 20%;
+    cursor: pointer;
+}
+
+.sidebar .logo {
+    margin-top: 40px;
+    transition: all .2s cubic-bezier(.075,.82,.165,1);
+    background: transparent;
+    color: #fff;
+    border: none
+}
+
+.sidebar-close li {
+    list-style-type: none;
+    margin-top: 40px; 
+    margin-left: 36px;
+}
+
+.sidebar-close i{
+    font-size: 40px;
+}
+
+
+.sidebar-code {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    top: 30;
+    z-index: 1;
+    left: 0;
+    background-color: #fff;
+    transition: all .70s ease-out; 
+  }

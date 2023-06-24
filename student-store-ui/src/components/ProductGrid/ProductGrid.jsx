@@ -2,6 +2,7 @@ import React from 'react'
 import ProductCard from '../ProductCard/ProductCard'
 import "./ProductGrid.css"
 
+// in the product grid, map the product cards so that for every id, a card is displayed
 const ProductGrid = ({productCard}) => {
   
     return (

@@ -7,11 +7,13 @@ import "./App.css"
 import { useEffect, useState, useParams} from "react";
 import axios from "axios"
 import ProductDetail from "../ProductDetail/ProductDetail"
+import Footer from "../Footer/Footer"
 
 export default function App() {
   
   const [productCard, setProductCard] = useState([]); 
   
+  // use axios to get the database
   useEffect(() => {
     axios
       .get("https://codepath-store-api.herokuapp.com/store")
@@ -27,19 +29,19 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <main>
-          {/* YOUR CODE HERE! */}
           <Navbar />
           <Sidebar />
-          {/* <Home 
-          productCard={productCard} /> */}
           <Routes>
-            <Route path="/" element={<Home productCard={productCard} />}/>
+            <Route path="/" element={<Home productCard={productCard} />}/> 
             <Route path = "/products/:productId" element={<ProductDetail/>}/>
             <Route path= "*" />
             <Route path= "/about"/>
             <Route path= "/contact" />
             <Route path= "/buy-now" />
           </Routes>
+          <Footer/>
+  
+
         </main>
       </BrowserRouter>
     </div>

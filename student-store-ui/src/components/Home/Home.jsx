@@ -6,30 +6,33 @@ import { useState } from "react";
 
 export default function Home({ productCard }) { // deconstructing prop
   
+  // search bar user input 
   const [search, setSearch] = useState(""); 
+
+  // filter the cards
   const [filteredData, setFilteredData] = useState(productCard); 
   const [categories, setCategories] = useState([])
   
   const handleSearch = (event) => {
     event.preventDefault(); // prevents the page forcing refresh + errors
     setSearch(event.target.value); // set search the user input 
-
-    setFilteredData(
+    setFilteredData( // filters the product card to match the search 
       productCard.filter((item) =>
       item.name.toLowerCase().includes(event.target.value.toLowerCase()) // makes lower case, so all searches appear regardless of cap
       )
     );
   };
 
+  // Category Select
   const handleCategorySelect = (category) => {
     if (category === ""){
       setFilteredData(productCard);
     }
-    else{
-      const filteredProducts = productCard.filter(
+    else{ 
+      const filteredProducts = productCard.filter( // filters the products that have a category that matched the selected category
         (item) => item.category === category
       ); 
-      setFilteredData(filteredProducts);
+      setFilteredData(filteredProducts); // display 
     }
   }
 

@@ -11,7 +11,7 @@
 }
 
 .product-card:hover{
-    box-shadow: 1px 1px 10px black;
+    box-shadow: 1px 1px 5px black;
 } 
 
 .product-card img {
@@ -26,15 +26,21 @@
 
 .product-card:hover .hidden-btns{
     opacity: 1;
+    
     /* transition: 0.5s; */
 }
 
 .product-card:hover .hidden-btns button{
-    background-color: black;
-    color: white;
+    /* background-color: black;
+    color: white; */
     padding-top: 5px;
     padding-bottom: 5px;
     transition: 0.5s;
+}
+
+.product-card.hidden-btns button:hover {
+    background-color: black;
+    color: white;
 }
 
 .product-name{
@@ -60,4 +66,12 @@
     background-color: black;
     color: white; 
     transition: 0.3s; 
+    
 }
+
+.show-count .count{
+    background-color: black; 
+    color: white; 
+    border: none; 
+}
+

@@ -1,54 +1,40 @@
 import React, {useEffect, useState} from 'react'
 import "./ProductCard.css"
 import { Link } from "react-router-dom"
-/*
-Props: 
-- product - a product object.
-- productId - a number representing the id of the product.
-- quantity - the quantity for this product found in the shoppingCart.
-- handleAddItemToCart - the handler function defined in the App.jsx component.
-- handleRemoveItemToCart - the handler function defined in the App.jsx component.
-- showDescription - a boolean value that determines whether or not to show the description.
+import Increment from '../Increment/Increment'
+import ShoppingCartHooks from '../ShoppingCartHooks/ShoppingCartHooks'
 
-Renders/ Displayed on Cards: 
-- img
-- name className="product-name"
-- price className="product-price"
-On Hover: 
-- two button elements:
-    - add className="add" -- should call {handleAddItemToCart}
-    - remove className="remove" -- should call {handleRemoveItemFromCart}
-- quant of items:
-    - className="product-quantity"
-*/
-
-const ProductCard = ({productCard}) => {
+// Component responsible for displaying each product card
+const ProductCard = ({productCard}) => { // passing in the porduct information from database as a prop
     
   const [count, setCount] = useState(0);
 
-  const increment = () => {
-    setCount(count + 1); // increment count by one when call this function
-  };
-
   const decrement = () => {
-    setCount(count - 1); // decrement count by one when call this function
+    if(count === 0) setCount(0); 
+    else setCount(count - 1); // decrement count by one when call this function
   };
 
+    // Access the shoppingCart state variable and setShoppingCart function from the ShoppingCartHooks component
+  const {shoppingCart, setShoppingCart} = ShoppingCartHooks()
   return (
 
       <div className="product-card">
       <div className='show'>
-        <img className="product-img" src={productCard.image}/>
+        {/* display the image */}
+        <img className="product-img" src={productCard.image}/> 
+        {/* display name */}
         <p className="product-name"> {productCard.name}</p>
+        {/* display price */}
         <p className="product-price"> ${(Math.round(productCard.price*100) / 100).toFixed(2)}</p>
         </div>
         <div className='show-count'>
-          <button onClick={increment}>+</button>
+          {/* buttons for count */}
+          <button onClick={() => Increment(setCount, count, productCard, shoppingCart, setShoppingCart)}>+</button>
           <button className="count">{count}</button>
           <button onClick={decrement}>-</button>
         <div className='hidden-btns'>
           <Link to={`/products/${productCard.id}`}>
-            <button>View Details</button>
+            <button className='view-details'>View Details</button>
           </Link>
         </div>
         </div>
@@ -56,8 +42,7 @@ const ProductCard = ({productCard}) => {
   )
 }
 
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_display_element_hover
+
 
 export default ProductCard
 
-//  <Link to={`/products/${productCard.id}`}>
