@@ -2,7 +2,7 @@ import * as React from "react"
 import {useState} from "react"
 import "./Sidebar.css"
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
-import ShoppingCartHooks from '../ShoppingCartHooks/ShoppingCartHooks';
+
 
 
 

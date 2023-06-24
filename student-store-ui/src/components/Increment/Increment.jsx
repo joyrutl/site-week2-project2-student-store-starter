@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ShoppingCartHooks from '../ShoppingCartHooks/ShoppingCartHooks';
-import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 
 const Increment = (setCount, count, productCard, shoppingCart, setShoppingCart) => {
