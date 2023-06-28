@@ -6,7 +6,7 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart'
 
 
 
-export default function Sidebar() {
+export default function Sidebar(props) {
 
   const [sidebarOpen, setSidebarOpen]= useState(false); 
   const toggleLogo = () => {
@@ -21,7 +21,7 @@ export default function Sidebar() {
     {sidebarOpen ? (
       <div className="sidebar-open">
       <div class="sidebar-code">
-      <ShoppingCart/>
+      <ShoppingCart shoppingCart = {props.shoppingCart} setShoppingCart= {props.setShoppingCart} />
       </div>
       </div>
 

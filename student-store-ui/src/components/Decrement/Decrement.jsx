@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const Increment = (setCount, count, productCard, shoppingCart, setShoppingCart) => {
+const Decrement = (setCount, count, productCard, shoppingCart, setShoppingCart) => {
   // Increase the count by 1
 
 
@@ -12,7 +12,7 @@ const Increment = (setCount, count, productCard, shoppingCart, setShoppingCart) 
   // Retrieve the name, price, quantity, and cost of the product
   const itemName = productCard.name
   const itemPrice = productCard.price
-  const itemQuant = count + 1
+  const itemQuant = count - 1
   const itemCost = itemQuant * itemPrice
 
   // Assign values to the addProducts object properties
@@ -34,16 +34,24 @@ const Increment = (setCount, count, productCard, shoppingCart, setShoppingCart) 
   console.log(savethis)
   console.log(`save this ${savethis}`)
 
+
+// checks if porduct is in card
+
   if (savethis.length !== 0){
     shoppingCartCopy[productIndex] = addProducts
-
-    
   }else{
-    shoppingCartCopy.push(addProducts) 
+    shoppingCartCopy.push(addProducts)
   }
+
+
+  if (itemQuant < 1){
+    delete shoppingCartCopy[productIndex]; 
+  }
+
+  
   //Create new list 
     console.log('shopping cart copy', shoppingCartCopy)
-    setCount(count + 1);
+    setCount(count - 1);
     setShoppingCart(shoppingCartCopy)
 
   console.log('ShoppingCart Copy: ',shoppingCartCopy)
@@ -58,6 +66,6 @@ const Increment = (setCount, count, productCard, shoppingCart, setShoppingCart) 
   )
 }
 
-export default Increment
+export default Decrement
 
 // The spread operator is not used in this code.

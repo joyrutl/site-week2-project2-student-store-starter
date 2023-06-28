@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react'
 import "./ProductCard.css"
 import { Link } from "react-router-dom"
 import Increment from '../Increment/Increment'
-import ShoppingCartHooks from '../ShoppingCartHooks/ShoppingCartHooks'
+import Decrement from '../Decrement/Decrement'
 
 // Component responsible for displaying each product card
-const ProductCard = ({productCard}) => { // passing in the porduct information from database as a prop
+const ProductCard = ({productCard, shoppingCart, setShoppingCart}) => { // passing in the porduct information from database as a prop
     
   const [count, setCount] = useState(0);
 
@@ -15,7 +15,6 @@ const ProductCard = ({productCard}) => { // passing in the porduct information f
   };
 
     // Access the shoppingCart state variable and setShoppingCart function from the ShoppingCartHooks component
-  const {shoppingCart, setShoppingCart} = ShoppingCartHooks()
   return (
 
       <div className="product-card">
@@ -31,7 +30,7 @@ const ProductCard = ({productCard}) => { // passing in the porduct information f
           {/* buttons for count */}
           <button onClick={() => Increment(setCount, count, productCard, shoppingCart, setShoppingCart)}>+</button>
           <button className="count">{count}</button>
-          <button onClick={decrement}>-</button>
+          <button onClick={count > 0 ? () => Decrement(setCount, count, productCard, shoppingCart, setShoppingCart) : null}>-</button>
         <div className='hidden-btns'>
           <Link to={`/products/${productCard.id}`}>
             <button className='view-details'>View Details</button>

@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import { useEffect, useState, useParams} from "react";
+import ShoppingCartHooks from '../ShoppingCartHooks/ShoppingCartHooks'
 import axios from "axios"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import Footer from "../Footer/Footer"
@@ -12,7 +13,7 @@ import Footer from "../Footer/Footer"
 export default function App() {
   
   const [productCard, setProductCard] = useState([]); 
-  
+  const {shoppingCart, setShoppingCart} = ShoppingCartHooks()
   // use axios to get the database
   useEffect(() => {
     axios
@@ -30,9 +31,9 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
-          <Sidebar />
+          <Sidebar shoppingCart= {shoppingCart} setShoppingCart = {setShoppingCart}  />
           <Routes>
-            <Route path="/" element={<Home productCard={productCard} />}/> 
+            <Route path="/" element={<Home productCard={productCard} shoppingCart= {shoppingCart} setShoppingCart = {setShoppingCart}    />}/> 
             <Route path = "/products/:productId" element={<ProductDetail/>}/>
             <Route path= "*" />
             <Route path= "/about"/>

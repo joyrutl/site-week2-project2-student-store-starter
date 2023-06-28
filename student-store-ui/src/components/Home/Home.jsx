@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard/ProductCard"
 import ProductGrid from "../ProductGrid/ProductGrid"
 import { useState } from "react";
 
-export default function Home({ productCard }) { // deconstructing prop
+export default function Home({ productCard, setShoppingCart, shoppingCart }) { // deconstructing prop
   
   // search bar user input 
   const [search, setSearch] = useState(""); 
@@ -66,7 +66,7 @@ export default function Home({ productCard }) { // deconstructing prop
           </tr>
         </table>
         </div>
-      <ProductGrid productCard={filteredData}/>
+      <ProductGrid productCard={filteredData} shoppingCart= {shoppingCart} setShoppingCart = {setShoppingCart} />
       <div id="about">
       
       {/* About section */}

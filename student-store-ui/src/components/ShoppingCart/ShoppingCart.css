@@ -1,3 +1,21 @@
 ul {
     color: black; 
 }
+
+.shopping-cart{
+    font-size: 25px; 
+    margin-right: 10px;
+}
+
+.shopping-cart table{
+    padding-top: 25px;
+}
+
+.shopping-cart th{
+    color:#47A992; 
+    text-align: left; 
+}
+
+.total{
+    font-weight: bold;
+}
